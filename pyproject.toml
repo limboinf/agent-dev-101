@@ -1,0 +1,19 @@
+[project]
+name = "agentic-agent-101"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.4"
+dependencies = [
+    "httpx[socks]>=0.28.1",
+    "ipywidgets>=8.1.8",
+    "langchain>=1.2.15",
+    "langchain-openai>=1.1.12",
+    "litellm>=1.83.0",
+    "openai>=2.31.0",
+    "pandas>=3.0.2",
+    "pydantic-settings>=2.9.1",
+    "rich>=14.3.4",
+    "textual>=8.2.3",
+    "tiktoken>=0.12.0",
+]

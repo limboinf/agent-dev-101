@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=540" />
+        <title>Agent Dev 101 · Cover Template</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .cover {
+                position: relative;
+                width: 540px;
+                height: 720px;
+                background-color: #5a4335;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 48px 40px;
+            }
+
+            /* 噪点纹理 */
+            .cover::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: 2;
+                opacity: 0.025;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+                background-size: 200px 200px;
+                pointer-events: none;
+            }
+
+            /* 点阵网格 */
+            .dot-grid {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+                background-image: radial-gradient(
+                    circle,
+                    rgba(255, 140, 100, 0.22) 1px,
+                    transparent 1px
+                );
+                background-size: 24px 24px;
+                pointer-events: none;
+            }
+
+            /* 对角线 — 30% */
+            .diag-line-1 {
+                position: absolute;
+                z-index: 1;
+                width: 140%;
+                height: 1px;
+                background-color: rgba(255, 140, 100, 0.35);
+                top: 28%;
+                left: -20%;
+                transform: rotate(-12deg);
+                pointer-events: none;
+            }
+
+            /* 对角线 — 72% */
+            .diag-line-2 {
+                position: absolute;
+                z-index: 1;
+                width: 140%;
+                height: 1px;
+                background-color: rgba(255, 140, 100, 0.2);
+                top: 72%;
+                left: -20%;
+                transform: rotate(-12deg);
+                pointer-events: none;
+            }
+
+            /* 内容区 */
+            .content {
+                position: relative;
+                z-index: 3;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            /* 系列标识：Agent Dev */
+            .series-label {
+                font-family:
+                    -apple-system, "Helvetica Neue", "Arial", sans-serif;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0.35em;
+                text-transform: uppercase;
+                color: #ffa078;
+                margin-bottom: 6px;
+            }
+
+            /* 大数字 101 — 系列视觉锚点 */
+            .big-number {
+                font-family:
+                    -apple-system, "Helvetica Neue", "Arial", sans-serif;
+                font-size: 56px;
+                font-weight: 800;
+                color: #ff8c64;
+                line-height: 1;
+                letter-spacing: -0.02em;
+                margin-bottom: 2px;
+            }
+
+            /* 分割线 */
+            .sep {
+                width: 40px;
+                height: 1.5px;
+                background-color: rgba(255, 140, 100, 0.6);
+                margin: 18px auto;
+            }
+
+            /* 子标题（动态知识点）— 核心突出 */
+            .subtitle {
+                font-family: "SimSun", "宋体", serif;
+                font-size: 52px;
+                font-weight: bold;
+                line-height: 1.3;
+                color: #fff;
+                letter-spacing: 0.03em;
+                white-space: pre-line;
+                max-width: 460px;
+                text-shadow: 0 2px 20px rgba(255, 140, 100, 0.25);
+            }
+
+            /* 小分割线 */
+            .sep-small {
+                width: 24px;
+                height: 1px;
+                background-color: rgba(255, 255, 255, 0.12);
+                margin: 20px auto;
+            }
+
+            /* 小副标题（固定）— 带前置装饰 */
+            .tagline {
+                font-family: "SimSun", "宋体", serif;
+                font-size: 14px;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.6);
+                letter-spacing: 0.05em;
+                max-width: 380px;
+            }
+
+            .tagline::before {
+                content: "◆ ";
+                color: rgba(255, 140, 100, 0.8);
+            }
+
+            /* 刊头 */
+            .masthead {
+                font-family: -apple-system, "Helvetica Neue", sans-serif;
+                font-size: 10px;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: rgba(255, 160, 120, 0.75);
+                margin-top: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cover">
+            <!-- 点阵网格 -->
+            <div class="dot-grid"></div>
+
+            <!-- 对角线 -->
+            <div class="diag-line-1"></div>
+            <div class="diag-line-2"></div>
+
+            <!-- 主内容 -->
+            <div class="content">
+                <div class="series-label">AI Agent冲刺计划</div>
+                <div class="big-number">Agent Dev 101</div>
+                <div class="sep"></div>
+                <p class="subtitle">什么是 Context Engineering：从"写好提示词"到"设计信息系统"</p>
+                <div class="sep-small"></div>
+                <p class="tagline">
+                    跟我从0到1系统性掌握 AI Agent核心知识、设计模式和实战
+                </p>
+                <p class="masthead">@Limbo.py 也做AI</p>
+            </div>
+        </div>
+    </body>
+</html>
