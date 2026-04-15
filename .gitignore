@@ -20,3 +20,8 @@ skills-lock.json
 .obsidian/
 .gitkeep
 output/
+
+# Local-only files
+cover-template.html
+card-prompt.md
+blog/README.md
