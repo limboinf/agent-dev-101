@@ -39,6 +39,9 @@
 | W1-D3-02 | [什么是 Context Engineering](./blog/W1-D3-02%20什么是%20Context%20Engineering：从"写好提示词"到"设计信息系统".md) |
 | W1-D4-01 | [Context Engineering 核心模式与实践](./blog/W1-D4-01%20Context%20Engineering%20核心模式与实践：从理论到落地.md) |
 | W1-D4-02 | [Prompt Cache 全解析](./blog/W1-D4-02%20Prompt%20Cache%20全解析：原理、厂商对比与最佳实践.md) |
+| W1-D5-01 | [什么是 AI Agent：不只是能聊天，而是能"做事"的系统](./blog/W1-D5-01%20什么是%20AI%20Agent：不只是能聊天，而是能"做事"的系统.md) |
+| W1-D5-02 | [感知-推理-行动循环：Agent 的心跳是怎么跳的](./blog/W1-D5-02%20感知-推理-行动循环：Agent%20的心跳是怎么跳的.md) |
+| W1-D5-03 | [Workflow vs Agent：不是所有问题都需要 Agent](./blog/W1-D5-03%20Workflow%20vs%20Agent：不是所有问题都需要%20Agent.md) |
 
 ---
 
