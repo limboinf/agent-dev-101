@@ -19,7 +19,7 @@
 
 ---
 
-## 三、六大模式速览
+## 二、六大模式速览
 
 ### 1. ReAct — 推理 + 行动的经典范式
 
@@ -28,9 +28,7 @@
 **解决什么问题**：纯推理（CoT）只想不做，容易产生幻觉；纯行动（Act-only）只做不想，容易走弯路。ReAct 把两者结合起来。
 
 **起源论文**：*ReAct: Synergizing Reasoning and Acting in Language Models*
-
 **典型场景**：知识问答（需要查资料才能回答）、网页导航、信息收集任务
-
 **代表实现**：LangChain 的 `create_agent()`
 
 ---
@@ -42,9 +40,7 @@
 **解决什么问题**：Agent 可能给出错误的答案但自己不知道。Reflection 让它"回头看一眼"，像学生做完题再检查一遍。
 
 **起源论文**：*Reflexion: Language Agents with Verbal Reinforcement Learning*
-
 **典型场景**：代码生成（跑测试 → 看报错 → 修复）、内容写作（写完自评 → 修改）
-
 **代表实现**：Anthropic 的 Evaluator/Optimizer 模式、Claude Code 的迭代修复循环
 
 ---
@@ -56,9 +52,7 @@
 **解决什么问题**：LLM 本身不能上网、不能算数学、不能查数据库。Tool Use 让它突破这些限制。
 
 **起源论文**：*Toolformer: Language Models Can Teach Themselves to Use Tools*
-
 **典型场景**：几乎所有 Agent 都需要 Tool Use——搜索、计算、代码执行、数据库查询
-
 **代表实现**：OpenAI Function Calling API、Anthropic Tool Use、MCP（Model Context Protocol）
 
 ---
@@ -71,7 +65,6 @@
 
 **起源论文**：*Plan-and-Solve Prompting*
 **典型场景**：旅行规划、复杂代码开发、科学研究、多步骤推理
-
 **代表实现**：Devin（先规划再编码）、BabyAGI（任务分解+优先级排序）
 
 ---
@@ -83,7 +76,6 @@
 **解决什么问题**：单 Agent 的上下文窗口有限、注意力会分散、工具太多容易乱。分工让每个 Agent 专注做自己最擅长的事。
 
 **典型场景**：软件开发团队（产品经理+程序员+测试）、内容生产线（研究员+写手+编辑）
-
 **代表实现**：AutoGen（微软）、CrewAI、LangGraph Multi-Agent
 
 ---
@@ -95,9 +87,7 @@
 **解决什么问题**：Agent 不完美，可能在关键步骤犯错。HITL 让人类在重要节点介入，确保安全和质量。
 
 **关键论文**：*A Survey on Large Language Model based Human-Agent Systems*
-
 **典型场景**：金融交易审批、医疗诊断确认、发送重要邮件前的人工审核
-
 **代表实现**：LangGraph 的 `interrupt_before` / `interrupt_after`、AutoGen 的 `UserProxyAgent`
 
 ---
