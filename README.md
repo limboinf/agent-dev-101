@@ -43,6 +43,8 @@
 | W1-D5-02 | [Workflow vs Agent：不是所有问题都需要 Agent](./blog/W1-D5-02%20Workflow%20vs%20Agent：不是所有问题都需要%20Agent.md) |
 | W1-D6-01 | [Agent 设计模式总览：六大模式一图看懂](./blog/W1-D6-01%20Agent%20设计模式总览：六大模式一图看懂.md) |
 | W1-D6-02 | [从零理解一个最简 Agent：用伪代码走通 Agent Loop](./blog/W1-D6-02%20从零理解一个最简%20Agent：用伪代码走通%20Agent%20Loop.md) |
+| W2-D8-01 | [Function Calling：让模型从"只会说"到"能动手"的关键一步](./blog/W2-D8-01%20Function%20Calling：让模型从"只会说"到"能动手"的关键一步.md) |
+| W2-D9-01 | [完整走通 Function Calling：从单工具到多工具编排](./blog/W2-D9-01%20完整走通%20Function%20Calling：从单工具到多工具编排.md) |
 
 ---
 
