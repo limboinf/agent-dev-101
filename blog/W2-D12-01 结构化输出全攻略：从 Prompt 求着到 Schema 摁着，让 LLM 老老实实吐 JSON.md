@@ -106,7 +106,7 @@ resp = client.chat.completions.create(
 )
 ```
 
-加上之后，**OpenAI 会保证返回的 `content` 一定是合法 JSON**——`json.loads` 100% 不会报 `JSONDecodeError`，市场套话、markdown code block、截断这些问题都不会再有。
+加上之后，**OpenAI 会保证返回的 `content` 一定是合法 JSON**——`json.loads` 100% 不会报 `JSONDecodeError`、markdown code block、截断这些问题都不会再有。
 
 但 JSON Mode 有两个**容易被忽略的限制**：
 

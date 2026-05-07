@@ -6,9 +6,9 @@
 
 ## 一、为什么要"手写"一遍？OpenAI 的 tools 不是更香吗？
 
-我一开始也偷懒——有 Function Calling 这种现成的，干嘛还要拿 Prompt 硬撸 ReAct？
+我一开始也偷懒干嘛还要拿 Prompt 硬撸 ReAct？
 
-直到我把上周写的 Function Calling Agent 拿出来 debug，盯着 `msg.tool_calls` 里那串 JSON 半天，问自己：**模型为什么选了这个工具？它中间"想"了什么？** 答不上来。OpenAI 把整个 Thought 过程藏在了模型权重里——你看到的只是结果，看不到推理。
+直到我把前面笔记写的 Function Calling Agent 拿出来 debug，盯着 `msg.tool_calls` 里那串 JSON 半天，问自己：**模型为什么选了这个工具？它中间"想"了什么？** 答不上来。OpenAI 把整个 Thought 过程藏在了模型权重里——你看到的只是结果，看不到推理。
 
 手写 ReAct 的价值就三句话：
 
@@ -168,31 +168,9 @@ def react(question: str, max_steps: int = 6, verbose: bool = True) -> str:
     return "⚠️ 达到 max_steps 仍未给出 finish"
 ```
 
-完整代码放在 [days/week2/day11_react_pattern_2/main.py](file:///Users/limbo/work/github/agentic-agent-101/days/week2/day11_react_pattern_2/main.py)。跑一下：
+完整代码放在  days/week2/day11_react_pattern_2/notebook.ipynb
 
-```python
-print(react("北京今天气温多少？如果超过 30°C 就给我推荐一杯冷饮。"))
-```
-
-理想轨迹：
-
-```text
---- Step 1 ---
-Thought: 我需要先查北京的气温。
-Action: get_weather[北京]
-Observation: 晴, 32°C, 湿度 35%
-
---- Step 2 ---
-Thought: 北京 32°C，要判断是不是超过 30。
-Action: calculate[32 - 30]
-Observation: 2
-
---- Step 3 ---
-Thought: 32 比 30 高 2°C，超过了，应该推荐冷饮。
-Action: finish[北京今天 32°C，比 30°C 高 2°C，给你推荐一杯冰美式或者柠檬冰沙。]
-
-北京今天 32°C，比 30°C 高 2°C，给你推荐一杯冰美式或者柠檬冰沙。
-```
+![](https://limbo.oss-cn-beijing.aliyuncs.com/wiki/20260507151700344.png)
 
 每一步的 Thought 都在台面上。这就是 ReAct 比 Function Calling "更透明"的地方——也是它"更容易出错"的地方。
 
@@ -250,7 +228,7 @@ history += f"\n{output}\nObservation: {obs}"
 
 **这就是 memory**。整个 Agent 的"上下文世界"，就是一段不断累积的字符串（或一个 `messages` 列表），没有任何魔法。
 
-所谓"短期记忆 / 长期记忆 / 滚动摘要 / 向量检索 memory"——本质都是**对这段 history 做不同方式的裁剪、压缩、检索**。骨子里你写的，永远是 `append`。
+**所谓"短期记忆 / 长期记忆 / 滚动摘要 / 向量检索 memory"——本质都是对这段 history 做不同方式的裁剪、压缩、检索。骨子里你写的，永远是 `append`。**
 
 ### 真相 2：Observation 才是 Agent 的灵魂
 
@@ -272,7 +250,7 @@ Agent 的循环：
    再次 LLM
 ```
 
-**唯一的关键变化**：模型开始"感知到环境的反馈"。
+**唯一的关键变化：模型开始"感知到环境的反馈"。**
 
 这个 Observation 闭环，就是从 ChatBot 跨到 Agent 的那条分水岭。没有 Observation，模型再聪明也只是个"嘴皮子"；有了 Observation，它才真正"做事"。
 
@@ -293,7 +271,7 @@ TOOLS = {"get_weather": get_weather}
 TOOLS[name](arg)
 ```
 
-完了。剩下那些花哨的概念，全是**为了让工具"可发现、可校验、可远程调用"**而加的工程外壳，跟 Agent 本身的智能毫无关系。
+完了。剩下那些花哨的概念，全是为了让工具"可发现、可校验、可远程调用而加的工程外壳，跟 Agent 本身的智能毫无关系。
 
 ### 真相 4：ReAct 本质是 while 循环
 
@@ -361,7 +339,7 @@ Step 3: Action: get_weather[上海]   → Observation: 多云, 28°C
 2. **检测重复 Action**：维护 `last` 变量，连续两次 `(action, arg)` 完全相同，就在 Observation 里塞一句 hint：
    ```python
    if (action, arg) == last:
-       obs = f"⚠️ 你已经执行过 {action}[{arg}]，结果是：{obs}。请换一个策略。"
+       obs = f"注意：你已经执行过 {action}[{arg}]，结果是：{obs}。请换一个策略。"
    last = (action, arg)
    ```
 3. **更高级**：加 Reflection 节点，让模型每隔 N 步停下来"回顾自己做得怎么样"。这就是 Reflexion 论文做的事。
