@@ -14,6 +14,7 @@ dependencies = [
     "pandas>=3.0.2",
     "pydantic-settings>=2.9.1",
     "rich>=14.3.4",
+    "simpleeval>=1.0.7",
     "textual>=8.2.3",
     "tiktoken>=0.12.0",
 ]
