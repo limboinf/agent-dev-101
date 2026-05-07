@@ -45,6 +45,9 @@
 | W1-D6-02 | [从零理解一个最简 Agent：用伪代码走通 Agent Loop](./blog/W1-D6-02%20从零理解一个最简%20Agent：用伪代码走通%20Agent%20Loop.md) |
 | W2-D8-01 | [Function Calling：让模型从"只会说"到"能动手"的关键一步](./blog/W2-D8-01%20Function%20Calling：让模型从"只会说"到"能动手"的关键一步.md) |
 | W2-D9-01 | [完整走通 Function Calling：从单工具到多工具编排](./blog/W2-D9-01%20完整走通%20Function%20Calling：从单工具到多工具编排.md) |
+| W2-D10-01 | [ReAct 模式深入：从论文核心思想到 Thought-Action-Observation 循环](./blog/W2-D10-01%20ReAct%20模式深入：从论文核心思想到%20Thought-Action-Observation%20循环.md) |
+| W2-D11-01 | [从零手写 ReAct Agent：Prompt 模板、循环控制、踩坑与改进方向](./blog/W2-D11-01%20从零手写%20ReAct%20Agent：Prompt%20模板、循环控制、踩坑与改进方向.md) |
+| W2-D12-01 | [结构化输出全攻略：从 Prompt 求着到 Schema 摁着，让 LLM 老老实实吐 JSON](./blog/W2-D12-01%20结构化输出全攻略：从%20Prompt%20求着到%20Schema%20摁着，让%20LLM%20老老实实吐%20JSON.md) |
 
 ---
 
