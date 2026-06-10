@@ -49,6 +49,8 @@
 | W2-D11-01 | [从零手写 ReAct Agent：Prompt 模板、循环控制、踩坑与改进方向](./blog/W2-D11-01%20从零手写%20ReAct%20Agent：Prompt%20模板、循环控制、踩坑与改进方向.md) |
 | W2-D12-01 | [结构化输出全攻略：从 Prompt 求着到 Schema 摁着，让 LLM 老老实实吐 JSON](./blog/W2-D12-01%20结构化输出全攻略：从%20Prompt%20求着到%20Schema%20摁着，让%20LLM%20老老实实吐%20JSON.md) |
 | W2-D13-01 | [第二周项目：用 Function Calling + ReAct + Rich UI 拼一只能跑的命令行 AI 助手](./blog/W2-D13-01%20第二周项目：用%20Function%20Calling%20%2B%20ReAct%20%2B%20Rich%20UI%20拼一只能跑的命令行%20AI%20助手.md) |
+| W3-D14-01 | [LangChain 入门：抛开"框架"滤镜，看清它到底替你做了什么](./blog/W3-D14-01%20LangChain%20入门：抛开%22框架%22滤镜，看清它到底替你做了什么.md) |
+| W3-D15-01 | [LangChain 三件套：ChatModel + PromptTemplate + LCEL](./blog/W3-D15-01%20LangChain%20三件套：ChatModel%20%2B%20PromptTemplate%20%2B%20LCEL.md) |
 
 ---
 
