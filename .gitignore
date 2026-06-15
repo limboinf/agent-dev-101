@@ -20,6 +20,7 @@ skills-lock.json
 .obsidian/
 .gitkeep
 output/
+.devin/
 
 # Local-only files
 cover-template.html
