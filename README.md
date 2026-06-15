@@ -52,6 +52,10 @@
 | W3-D14-01 | [LangChain 入门：抛开"框架"滤镜，看清它到底替你做了什么](./blog/W3-D14-01%20LangChain%20入门：抛开%22框架%22滤镜，看清它到底替你做了什么.md) |
 | W3-D15-01 | [LangChain 三件套：ChatModel + PromptTemplate + LCEL](./blog/W3-D15-01%20LangChain%20三件套：ChatModel%20%2B%20PromptTemplate%20%2B%20LCEL.md) |
 
+### 其他笔记
+
+- [一文读懂：Loop Engineering 是个啥东西](./blog/一文读懂：Loop%20Engineering%20是个啥东西.md)
+
 ---
 
 ## 快速导航
