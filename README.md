@@ -55,6 +55,7 @@
 ### 其他笔记
 
 - [一文读懂：Loop Engineering 是个啥东西](./blog/一文读懂：Loop%20Engineering%20是个啥东西.md)
+- [一文读懂：SKILL 的设计模式](./blog/一文读懂：SKILL%20的设计模式.md)
 
 ---
 
